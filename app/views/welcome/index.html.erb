@@ -1,0 +1,68 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<h2>Hola Tú :D!</h2>
+
+<!--Ejemplo 2-->
+<ul class="list-unstyled  text-gris small">                         
+    <% @search2.each  do |tweet| %>
+    <li>
+      <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+      <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>       
+    </li>
+    <%  end %>
+    <a href="http://twitter.com/gairga" title="Twitter">
+      <%= image_tag("twittericono.png", class:"pull-right") %>
+    </a>
+  </ul>
+
+<!--Ejemplo 1-->
+ <ul class="list-unstyled  text-gris small">                         
+   <% @search.each  do |tweet| %>
+    <li>
+    <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+    <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>       
+   </li>
+   <%  end %>
+   <a href="http://twitter.com/gairga" title="Twitter">
+   <%= image_tag("iconotwitter.png", class:"pull-right") %>
+   </a>
+ </ul>
+
+ <!--Ejemplo 3-->
+
+  <ul class="list-unstyled  text-gris small">                         
+   <% @search3.each  do |tweet| %>
+    <li>
+    <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+    <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>       
+   </li>
+   <%  end %>
+   <a href="http://twitter.com/nombredeusuario" title="Twitter">
+   <%= image_tag("twittericono.png", class:"pull-right") %>
+   </a>
+ </ul>
+
+ <div class="jumbotron"> 
+      &nbsp; <div id="container">
+           <div class="row">                   
+                    <% @search4.each  do |tweet| %>     
+                          <div  class="item" style="width:195px; margin:0 auto;"> 
+                            <div class="thumbnail">
+                            <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left  img-circle") %>
+                              <div class="caption">
+                               <h3 class="text-right"><%= tweet.user.name %></h3>
+                               <p class="small"><%= tweet.user.location %></p>
+                                <p><a href="<%= tweet.url %>" class="" >
+                                <%= tweet.text%></a>
+                                </p>
+                                <p>
+                                <span class="small text-right"> <%= time_ago_in_words(tweet.created_at) %></span>
+                                </p>
+                              </div>
+                            </div>
+                        </div> <!-- //fin .item-->      
+                    <%  end %>
+              </div>
+	  </div><!-- //fin de container-->
+
+ 
