@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
         @search3 = $client.search(topics.join(","), :include_rts => false).take(3).collect
 
         #Cuarto Ejemplo
-        @search4 = $client.search("reciclaje -rt",:result_type=>'recent',:geocode=>"-33.4691199,-70.641997,100km").take(18).collect
+        @search4 = $client.search("rails -rt",:result_type=>'recent',:geocode=>"-33.4691199,-70.641997,100km").take(18).collect
 
    end
 end
